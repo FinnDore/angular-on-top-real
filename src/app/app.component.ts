@@ -55,8 +55,8 @@ import {
   ],
 })
 export class AppComponent implements OnInit {
-  i = false;
-  title = { val: 'angular-on-top-real' };
+  trigger = false;
+  title = 'some text';
 
   titles = [
     'some text',
@@ -64,20 +64,19 @@ export class AppComponent implements OnInit {
     'another more diffent ',
   ];
   random() {
-    this.i = !this.i;
-    this.title = {
-      val: `${
-        this.titles.filter((x) => x !== this.title.val)[
-          Math.floor(Math.random() * this.titles.length)
-        ]
-      }`,
-    };
+    this.trigger = !this.trigger;
+    this.title = `${
+      this.titles.filter((x) => x !== this.title)[
+        Math.max(Math.floor(Math.random() * this.titles.length - 1), 0)
+      ]
+    }`;
     this.ref.detectChanges();
   }
 
   ngOnInit() {
     this.ref.detectChanges();
   }
+
   constructor(private ref: ChangeDetectorRef) {
     this.ref.detach();
   }

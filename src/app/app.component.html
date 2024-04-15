@@ -1,9 +1,9 @@
 <div class="w-screen h-screen grid place-content-center">
   <div
-    class="bg-black select-none whitespace-nowrap overflow-hidden text-white text-center my-32 h-content rounded-full p-12 py-2 shadow-xl"
-    [@wedowidth]="i"
+    class="bg-black flex-1 select-none whitespace-nowrap overflow-hidden text-white text-center my-32 h-content rounded-full p-12 py-2 shadow-xl"
+    [@wedowidth]="trigger"
     (click)="random()"
   >
-    {{ title.val }} - {{ i }}
+    {{ title }} - {{ trigger }}
   </div>
 </div>
