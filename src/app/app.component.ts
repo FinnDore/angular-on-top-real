@@ -38,10 +38,8 @@ import {
         })
       ),
 
-      transition('true => false', [animate('1s ease-in-out')]),
-      transition('true => true', [animate('1s ease-in-out')]),
-      transition('false => true', [animate('1s ease-in-out')]),
-      transition('false => false', [animate('1s ease-in-out')]),
+      transition('true <=> false', [animate('1s ease-in-out')]),
+      transition('* <=> *', [animate('1s ease-in-out')]),
 
       // transition('void <=> *', [animate('.15s ease-in-out')]),
       // transition('* <=> void', [animate('.15s ease-in-out')]),
